@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="logo">
+        <img src="../../assets/images/connexxion_test_logo.png" alt="logo">
+    </div>
+    <div class="nav-links">
+        <a class="features">Features</a>
+        <a class="Pricing">Pricing</a>
+        <a class="FAQs">
+            <mat-icon aria-hidden="false" aria-label="profile icon">question_answer</mat-icon>
+            <span>FAQs</span>
+        </a>
+    </div>
+    <div class="login">
+        <button  mat-raised-button color="primary" >
+           <mat-icon aria-hidden="false" aria-label="profile icon">account_circle</mat-icon> Login</button>
+    </div>
+    <div class="ham-menu">
+        <button mat-icon-button color="primary" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <span >Features</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>payments</mat-icon>
+              <span>Pricing</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>question_answer</mat-icon>
+              <span>FAQs</span>
+            </button>
+            <button mat-menu-item color="primary" >
+                <mat-icon aria-hidden="false" aria-label="profile icon">account_circle</mat-icon> Login</button>
+          </mat-menu>
+    </div>
+</div>

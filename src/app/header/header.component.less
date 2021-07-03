@@ -1,0 +1,91 @@
+@primary: #a3cf5f;
+
+.container {
+    display: flex;
+    margin: 10px;
+    flex-wrap: wrap;
+    & > div {
+        flex-grow: 1;
+        align-self: center;
+    }
+    .logo {
+        img {
+            width: 500px;
+            height: 80px;
+            object-fit: none;
+        }
+    }
+    .nav-links {
+        font-weight: 600;
+        color: #261E1E;
+        margin: 10px 10px 0 0;
+        a {
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            span {
+                margin: 2px;
+            }
+            .mat-icon{
+                vertical-align: middle;
+            }
+        }
+    }
+    .login {
+        text-align: center;
+        button {
+            font-size: 16px;
+            padding-left: 10px;
+            .mat-icon {
+                margin-right: 5px;
+                font-size: 26px;
+            }
+        }
+        .mat-raised-button.mat-primary {
+            background-color: @primary;
+        }
+    }
+    .ham-menu {
+        text-align: right;
+        margin-right: 15px;
+        .mat-icon-button.mat-primary {
+            color: @primary;
+        }
+        .mat-icon{
+            font-size: 36px;
+            height: 28px;
+            width: 35px;
+        }
+        .mat-icon-button {
+            width: 60px;
+            height: 60px;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .login {
+        display: none;
+    }
+    .nav-links{
+        display: none;
+    }
+    .logo {
+        img {
+            width: auto !important;
+            margin-left: 20px;
+        }
+    }
+    .mat-menu-item {
+        font-size: 20px;
+        span {
+            margin-right: 25px;
+        }
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .ham-menu {
+        display: none;
+    }
+}
