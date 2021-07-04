@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
  
 const server = express();
-const port = process.env.port || 3001;
+const port = process.env.PORT || 3001;
 // built in middleware to serve static content just as images, css, html etc
 server.use(express.static(path.join(__dirname, 'dist/connexion-landing')));
  
