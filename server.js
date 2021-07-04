@@ -11,5 +11,5 @@ server.get('/*', async (req, res) => {
     res.sendFile(path.resolve(__dirname, 'dist/connexion-landing', 'index.html'));
 });
  
-server.listen(port, () => console.log('App Running on port 3000'));
+server.listen(port, () => console.log(`App Running on port ${port}`));
 
