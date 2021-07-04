@@ -62,7 +62,38 @@
         }
     }
 }
-
+@media screen and (max-width: 400px) {
+    .container {
+        margin: 2px;
+        .logo {
+            width: 60vw;
+            background-size: 50vw;
+        }
+        .ham-menu {
+            button{
+                margin-top: 5px !important;
+            }
+        }
+    }
+}
+@media screen and (max-width: 900px) {
+    .logo {
+        width: 70vw;
+        height: 80px;
+        background-image: url("../../assets/images/connexxion_test_logo.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 40vw;
+        img {
+            display: none;
+        }
+    }
+    .ham-menu {
+        button{
+            margin-top: 10px;
+        }
+    }
+}
 @media screen and (max-width: 900px) {
     .login {
         display: none;
