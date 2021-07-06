@@ -1,10 +1,10 @@
 <div class="container">
-    <div class="logo">
+    <div class="logo" routerLink="home">
         <img src="../../assets/images/connexxion_test_logo.png" alt="logo">
     </div>
     <div class="nav-links">
         <a class="features">Features</a>
-        <a class="Pricing">Pricing</a>
+        <a class="Pricing" routerLink="pricing">Pricing</a>
         <a class="FAQs">
             <mat-icon aria-hidden="false" aria-label="profile icon">question_answer</mat-icon>
             <span>FAQs</span>
@@ -22,7 +22,7 @@
             <button mat-menu-item>
               <span >Features</span>
             </button>
-            <button mat-menu-item>
+            <button mat-menu-item routerLink="pricing">
                 <mat-icon>payments</mat-icon>
               <span>Pricing</span>
             </button>

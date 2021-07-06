@@ -1,0 +1,102 @@
+<div class="pricing-container">
+    <div class="header">
+        <div class="title">
+            <h1>
+                Build a Winning Team With the Right Plan.
+            </h1>
+        </div>
+        <div class="desc">
+            Hire top talent, from fresh grads to experienced professionals, with the most accurate skills assessment API
+            platform.
+        </div>
+    </div>
+    <div class="plans">
+        <div class="plan">
+            <div class="title">
+                <div class="icon">
+                    <mat-icon>play_arrow</mat-icon>
+                </div>
+                <h3>
+                    Starter
+                </h3>
+            </div>
+            <div class="desc">
+                <p>
+                    Great for small teams looking to hire best talent, faster.
+                </p>
+            </div>
+            <div class="price">
+                <span>$150/month</span>
+                <div class="price__desc">
+                    <span>Paid Annually</span>
+                </div>
+                <button class="action">
+                    Contact Us
+                </button>
+            </div>
+            <div class="feature-list">
+                <ul>
+                    <li *ngFor="let item of plans.starter">{{item}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="plan">
+            <div class="title">
+                <div class="icon">
+                    <mat-icon>api</mat-icon>
+                </div>
+                <h3>
+                    Enterprise
+                </h3>
+            </div>
+            <div class="desc">
+                <p>
+                    Best for growing teams looking for a scalable solution.
+                </p>
+            </div>
+            <div class="price">
+                <span>$150/month</span>
+                <div class="price__desc">
+                    <span>Paid Annually</span>
+                </div>
+                <button class="action">
+                    Contact Us
+                </button>
+            </div>
+            <div class="feature-list">
+                <ul>
+                    <li *ngFor="let item of plans.enterprise">{{item}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="plan">
+            <div class="title">
+                <div class="icon">
+                    <mat-icon>dashboard_customize</mat-icon>
+                </div>
+                <h3>
+                    Custom
+                </h3>
+            </div>
+            <div class="desc">
+                <p>
+                    Ideal for organizations who need more customization.
+                </p>
+            </div>
+            <div class="price">
+                <span>$150/month</span>
+                <div class="price__desc">
+                    <span>Paid Annually</span>
+                </div>
+                <button class="action">
+                    Contact Us
+                </button>
+            </div>
+            <div class="feature-list">
+                <ul>
+                    <li *ngFor="let item of plans.custom">{{item}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

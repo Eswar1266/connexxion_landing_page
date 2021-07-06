@@ -8,11 +8,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
+import { PricingComponent } from './pricing/pricing.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { HomeComponent } from './home/home.component';
+import { HomeService } from './home/home.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    PricingComponent,
+    NotFoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +29,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MatIconModule,
     MatMenuModule
   ],
-  providers: [],
+  providers: [HomeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
