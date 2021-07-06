@@ -14,13 +14,13 @@ const routes: Routes = [
     component: PricingComponent
   },
   {
-    path: "**",
-    component: NotFoundComponent
-  },
-  {
     path: "",
     pathMatch: 'full',
-    redirectTo: '/home'
+    redirectTo: 'home'
+  },
+  {
+    path: "**",
+    component: NotFoundComponent
   }
 ];
 
