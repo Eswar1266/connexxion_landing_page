@@ -10,20 +10,25 @@ import { HomeService } from './home.service';
 export class HomeComponent implements OnInit, AfterViewInit, AfterContentInit, OnDestroy {
 
   carouselCtx = 1;
+  carouselTimer: any;
   so: any;
   horzBannerEle: any;
   horzBannerWrapperEle: any;
   horzBannerScrollDistance = 0;
   horzBannerTopOffset = 0
+  horzBannerProgress = 0;
 
   @HostListener('window:scroll', ['$event']) scrollHandler(e: MouseEvent) {
     const offsetTop = window.pageYOffset;
     if (offsetTop >= this.horzBannerTopOffset && offsetTop <= this.horzBannerScrollDistance + 75) {
+      this.horzBannerProgress = Math.floor((offsetTop- this.horzBannerTopOffset)/ (this.horzBannerScrollDistance + 75 - this.horzBannerTopOffset) * 100);
       this.horzBannerWrapperEle.style.transform = "translateX(-" + (offsetTop - this.horzBannerTopOffset) + "px)";
     } else if (offsetTop < this.horzBannerTopOffset) {
       this.horzBannerWrapperEle.style.transform = "translateX(0)";
+      this.horzBannerProgress = 0;
     } else {
       this.horzBannerWrapperEle.style.transform = `translateX(-${this.horzBannerScrollDistance -this.horzBannerTopOffset + 75}px)`;
+      this.horzBannerProgress = 100;
     }
   }
 
@@ -31,7 +36,7 @@ export class HomeComponent implements OnInit, AfterViewInit, AfterContentInit, O
 
   }
   ngOnInit() {
-    setInterval(() => {
+    this.carouselTimer =setInterval(() => {
       let radioBtn = <HTMLInputElement>document.getElementById(`radio${this.carouselCtx}`);
       radioBtn.checked =true;
       this.carouselCtx++;
@@ -61,5 +66,6 @@ export class HomeComponent implements OnInit, AfterViewInit, AfterContentInit, O
 
   ngOnDestroy() {
     this.so.teardown();
+    clearInterval(this.carouselTimer);
   }
 }

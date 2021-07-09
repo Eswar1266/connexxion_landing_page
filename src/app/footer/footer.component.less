@@ -1,0 +1,100 @@
+@dark-chocolate: #262323;
+@chocolate-text: #b8b8b8;
+@primary: #a3cf5f;
+@secondary: #40D3DC;
+.Font() {
+    font-family: 'Montserrat', sans-serif !important;
+}
+.Heading(@font-size: 48px) {
+    .Font();
+    font-size: @font-size;
+}
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 5vh 0;
+    background-color: @dark-chocolate;
+    .Font();
+    .wrapper {
+        width: 80vw;
+        display: flex;
+        .col {
+            width: 25vw;
+            padding: 15px 20px;
+            min-width: 300px;
+            .title {
+                color: @chocolate-text;
+                h3 {
+                    .Heading(24px);
+                    color: @primary;
+                }
+
+            }
+            .content {
+                color: @chocolate-text;
+                p {
+                    .ng-fa-icon {
+                        margin-right: 10px;
+                        color: @primary;
+                        font-size: 16px;
+                    }
+                }
+                ul{
+                    list-style-type: none;
+                    padding-left: 0;
+                    li {
+                        padding: 2px 0;
+                        cursor: pointer;
+                        transition: all 0.1s ease-in-out;
+                        .ng-fa-icon {
+                            margin-right: 10px;
+                            opacity: 0;
+                            transition: all 0.3s ease-in-out;
+                        }
+                        &:hover {
+                            color: @primary;
+                            .ng-fa-icon {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+            .social {
+                font-size: 24px;
+                padding-top: 15px;
+                .ng-fa-icon{
+                    margin-right: 20px;
+                    margin-top: 10px;
+                    cursor: pointer;
+                    color: @primary;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1500px){
+    .container {
+        .wrapper {
+            width: 96vw;
+            flex-wrap: wrap;
+            justify-content: center;
+            .col {
+                min-width: 300px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1200px){
+    .container {
+        .wrapper {
+            width: 80vw;
+            .col {
+                flex-grow: 1;
+            }
+        }
+    }
+}

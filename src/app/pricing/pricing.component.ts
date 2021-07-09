@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { PricingModalComponent } from './pricing-modal/pricing-modal.component';
+import { Iplans, PlanTypes } from './pricing.interface';
 
 @Component({
   selector: 'app-pricing',
@@ -6,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pricing.component.less']
 })
 export class PricingComponent implements OnInit {
-  plans = {
+  plans: Iplans = {
     starter: [
       '2 Users',
       '300 test Attempts Annually',
@@ -45,9 +48,29 @@ export class PricingComponent implements OnInit {
       'Custom Features Development',
       '24*7 Customer Support'
     ]
-  }
-  constructor() { }
+  };
+
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.dialog.afterAllClosed.subscribe(result => {
+      console.log("Contact Modal Closed");
+    })
   }
+
+  openContactModal(type: PlanTypes) {
+    let width = '40vw';
+    if (window.innerWidth < 1000) {
+      width= '80vw';
+    }
+    if (window.innerWidth < 400) {
+      width = '95vw';
+    }
+
+    this.dialog.open(PricingModalComponent,{
+      width,
+      data: {type}
+    });
+  }
+
 }
